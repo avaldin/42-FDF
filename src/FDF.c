@@ -6,7 +6,7 @@
 /*   By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:29:08 by avaldin           #+#    #+#             */
-/*   Updated: 2024/02/07 13:53:11 by avaldin          ###   ########.fr       */
+/*   Updated: 2024/02/07 13:55:50 by avaldin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,14 @@ void	ft_hook(t_data *data)
 	mlx_hook(data->mlx->win, KeyPress, KeyPressMask, key_hook, data);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_data	*data;
 
+	(void)argc;
 	data = NULL;
 	data = init_data();
-	//parsing(??);
+	data->map = parsing(argv[1]);
 	clean_open(data);
 	//creat_img(??);
 	ft_hook(data);

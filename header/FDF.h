@@ -6,7 +6,7 @@
 /*   By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:28:50 by avaldin           #+#    #+#             */
-/*   Updated: 2024/02/07 13:53:11 by avaldin          ###   ########.fr       */
+/*   Updated: 2024/02/07 15:11:05 by avaldin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,19 @@ typedef struct	s_data
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-#include <X11/X.h>
+# include <X11/X.h>
+# include "get_next_line.h"
 
 
 t_data	*init_data(void);
 int		clean_close(t_data *data);
 void	clean_open(t_data *data);
+int		**parsing(char *file);
+
+char	**ft_split(char const *s, char c);
+size_t	ft_strlen(const char *str);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
 
 
 
