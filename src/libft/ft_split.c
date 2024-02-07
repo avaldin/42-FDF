@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avaldin <avaldin@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:08:04 by avaldin           #+#    #+#             */
-/*   Updated: 2023/11/13 13:08:04 by avaldin          ###   ########.fr       */
+/*   Updated: 2024/02/07 15:12:00 by avaldin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/FDF.h"
 
-static int	ft_countword(char const *s, char c)
+int	ft_countword(char const *s, char c)
 {
 	int	count;
 	int	i;

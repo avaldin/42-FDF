@@ -6,7 +6,7 @@
 /*   By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:29:08 by avaldin           #+#    #+#             */
-/*   Updated: 2024/02/07 13:55:50 by avaldin          ###   ########.fr       */
+/*   Updated: 2024/02/07 15:03:44 by avaldin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	main(int argc, char **argv)
 	data = NULL;
 	data = init_data();
 	data->map = parsing(argv[1]);
+	if (!data->map)
+		clean_close(data);
 	clean_open(data);
 	//creat_img(??);
 	ft_hook(data);

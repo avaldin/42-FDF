@@ -6,7 +6,7 @@
 /*   By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:28:50 by avaldin           #+#    #+#             */
-/*   Updated: 2024/02/07 15:11:05 by avaldin          ###   ########.fr       */
+/*   Updated: 2024/02/07 15:32:53 by avaldin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,11 @@ void	clean_open(t_data *data);
 int		**parsing(char *file);
 
 char	**ft_split(char const *s, char c);
+int		ft_countword(char const *s, char c);
 size_t	ft_strlen(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+void	*ft_calloc(size_t nmemb, size_t size);
+
 
 
 

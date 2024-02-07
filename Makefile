@@ -6,7 +6,7 @@
 #    By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 15:30:58 by avaldin           #+#    #+#              #
-#    Updated: 2024/02/07 15:11:05 by avaldin          ###   ########.fr        #
+#    Updated: 2024/02/07 15:14:34 by avaldin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,12 @@ OBJ_PATH	=	obj
 SOURCES		=	src/FDF.c\
 				src/security.c\
 				src/parsing.c\
+
 				src/libft/ft_split.c\
 				src/libft/ft_strlen.c\
 				src/libft/ft_substr.c\
+				src/libft/ft_calloc.c\
+
 				src/gnl/get_next_line.c\
 				src/gnl/get_next_line_utils.c\
 
