@@ -6,32 +6,47 @@
 /*   By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 11:49:05 by avaldin           #+#    #+#             */
-/*   Updated: 2024/02/05 12:10:55 by avaldin          ###   ########.fr       */
+/*   Updated: 2024/02/07 13:53:58 by avaldin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/FDF.h"
 
-void	init_data(t_data *data)
+t_data	*init_data(void)
 {
+	t_data	*data;
+
+	data = malloc(sizeof(t_data));
+	data->mlx = malloc(sizeof(t_mlx));
+	data->img = malloc(sizeof(t_img));
 	data->mlx->data = data;
 	data->img->data = data;
 	data->img->img = NULL;
 	data->img->addr = NULL;
 	data->mlx->ptr = NULL;
 	data->mlx->win = NULL;
+	data->map = NULL;
+	return (data);
 }
 
-void	clean_close(t_data *data)
+int	clean_close(t_data *data)
 {
 	if (data->img->img)
-		free(data->img->img);
-	if (data->img->addr)
-		free(data->img->addr);
+		mlx_destroy_image(data->mlx->ptr, data->img->img);
+	if (data->mlx->win)
+		mlx_destroy_window(data->mlx->ptr, data->mlx->win);
+	if (data->mlx->ptr)
+		mlx_destroy_display(data->mlx->ptr);
 	if (data->mlx->ptr)
 		free(data->mlx->ptr);
-	if (data->mlx->win)
-		free(data->mlx->win);
+	if (data->mlx)
+		free(data->mlx);
+	if (data->img)
+		free(data->img);
+	if (data)
+		free(data);
+	exit(EXIT_SUCCESS);
+	return (0);
 }
 
 void	clean_open(t_data *data)

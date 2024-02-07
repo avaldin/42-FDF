@@ -6,7 +6,7 @@
 /*   By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:28:50 by avaldin           #+#    #+#             */
-/*   Updated: 2024/02/02 11:06:00 by avaldin          ###   ########.fr       */
+/*   Updated: 2024/02/07 13:53:11 by avaldin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct	s_data
 {
 	t_mlx	*mlx;
 	t_img	*img;
+	int		**map;
 }				t_data;
 
 # include "../mlx_linux/mlx.h"
@@ -41,9 +42,11 @@ typedef struct	s_data
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+#include <X11/X.h>
 
-void	init_data(t_data *data);
-void	clean_close(t_data *data);
+
+t_data	*init_data(void);
+int		clean_close(t_data *data);
 void	clean_open(t_data *data);
 
 

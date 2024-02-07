@@ -6,7 +6,7 @@
 #    By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 15:30:58 by avaldin           #+#    #+#              #
-#    Updated: 2024/01/31 12:50:23 by avaldin          ###   ########.fr        #
+#    Updated: 2024/02/07 14:55:08 by avaldin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,11 @@ OBJ_PATH	=	obj
 
 SOURCES		=	src/FDF.c\
 				src/security.c\
+				src/gnl/get_next_line.c\
+				src/gnl/get_next_line_utils.c\
 
-HEADER		=	header/FDF.h
+HEADER		=	header/FDF.h\
+				header/get_next_line.h
 
 		##		OBJECTS				##
 
