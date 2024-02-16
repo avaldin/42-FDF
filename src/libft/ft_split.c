@@ -6,7 +6,7 @@
 /*   By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:08:04 by avaldin           #+#    #+#             */
-/*   Updated: 2024/02/07 15:12:00 by avaldin          ###   ########.fr       */
+/*   Updated: 2024/02/09 10:43:03 by avaldin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_countword(char const *s, char c)
 	if (s[i] != c)
 		count++;
 	i++;
-	while (s[i])
+	while (s[i] && s[i] != '\n')
 	{
 		if (s[i - 1] == c && s[i] != c)
 			count++;
@@ -62,7 +62,7 @@ static char	**ft_freeee(char **str, int n)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	int		i;
 	int		n;
@@ -86,6 +86,7 @@ char	**ft_split(char const *s, char c)
 		else
 			i++;
 	}
+	free(s);
 	split[n] = NULL;
 	return (split);
 }

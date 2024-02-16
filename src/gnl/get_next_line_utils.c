@@ -12,7 +12,7 @@
 
 #include "../../header/get_next_line.h"
 
-void	*ft_calloc(size_t nmemb, size_t size, char *tofree)
+void	*ft_callloc(size_t nmemb, size_t size, char *tofree)
 {
 	char	*str;
 	size_t	i;
@@ -45,7 +45,7 @@ char	*ft_strjoin(size_t n, char *rt_line, char *buffer)
 
 	i = 0;
 	j = 0;
-	str = ft_calloc((BUFFER_SIZE * (n + 1) + 1), sizeof(char), rt_line);
+	str = ft_callloc((BUFFER_SIZE * (n + 1) + 1), sizeof(char), rt_line);
 	if (!str)
 		return (NULL);
 	while (n && rt_line[i])
