@@ -6,7 +6,7 @@
 /*   By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 11:49:05 by avaldin           #+#    #+#             */
-/*   Updated: 2024/02/16 15:06:38 by avaldin          ###   ########.fr       */
+/*   Updated: 2024/02/20 17:10:42 by avaldin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_data	*init_data(void)
 
 void	map_free(t_map *map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < map->size_y)
@@ -94,7 +94,6 @@ void	clean_open(t_data *data)
 	if (!data->img->img)
 		clean_close(data);
 	data->img->addr = mlx_get_data_addr(data->img->img,
-										&data->img->bits_per_pixel,
-										&data->img->line_length,
-										&data->img->endian);
+			&data->img->bits_per_pixel,
+			&data->img->line_length, &data->img->endian);
 }

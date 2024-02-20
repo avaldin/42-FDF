@@ -50,7 +50,7 @@ OBJS		=	$(SOURCES:.c=.o)
 
 
 all			:	$(NAME)
-%.o			:	%.c $(HEADER)
+obj/%.o			:	%.c $(HEADER)
 	$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME)		:	$(OBJS) Makefile

@@ -17,15 +17,15 @@ void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
 	char	*dst;
 
 	dst = img->addr + (y * img->line_length
-							 + x * (img->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+			+ x * (img->bits_per_pixel / 8));
+	*(unsigned int *)dst = color;
 }
 
 int	*ratio_z(int **map, int size_x, int size_y)
 {
-	int i;
-	int j;
-	int *range;
+	int	i;
+	int	j;
+	int	*range;
 
 	i = 0;
 	range = malloc(2 * sizeof(int));
@@ -51,10 +51,9 @@ int	*ratio_z(int **map, int size_x, int size_y)
 
 int	*projection(int x, int y, int z, t_map *map)
 {
-	int 	*proj;
-	int 	diff;
+	int		*proj;
+	int		diff;
 	float	temp;
-
 
 	proj = malloc(sizeof(int) * 2);
 	if (!proj)
@@ -68,15 +67,16 @@ int	*projection(int x, int y, int z, t_map *map)
 		z = 400 * z / diff;
 	temp = (sqrtf(2) / 2) * (float )(x - y);
 	proj[0] = 1000 + (int )temp;
-	temp = (sqrtf((float)2 / (float)3) * (float )z) - ((float)1 / sqrtf(6)) * (float )(x + y);
+	temp = (sqrtf((float)2 / (float)3)
+			* (float )z) - ((float)1 / sqrtf(6)) * (float )(x + y);
 	proj[1] = -(int )temp - 300;
 	return (proj);
 }
 
 void	create_img(t_map *map, t_img *img, t_mlx *mlx)
 {
-	int		x;
-	int 	y;
+	int	x;
+	int	y;
 
 	y = 0;
 	map->range = ratio_z(map->map, map->size_x, map->size_y);

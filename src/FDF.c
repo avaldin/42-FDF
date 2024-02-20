@@ -6,19 +6,16 @@
 /*   By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:29:08 by avaldin           #+#    #+#             */
-/*   Updated: 2024/02/16 13:40:31 by avaldin          ###   ########.fr       */
+/*   Updated: 2024/02/20 16:47:58 by avaldin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/FDF.h"
 
-
 int	key_hook(int keycode, t_data *data)
 {
-	printf("keycode = %d\n", keycode);
-	if (keycode == 65307 )
+	if (keycode == 65307)
 		clean_close(data);
-	printf("oui\n");
 	return (0);
 }
 

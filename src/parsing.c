@@ -6,7 +6,7 @@
 /*   By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:47:46 by avaldin           #+#    #+#             */
-/*   Updated: 2024/02/16 11:31:30 by avaldin          ###   ########.fr       */
+/*   Updated: 2024/02/20 17:07:40 by avaldin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	get_size(t_map *map, int fd)
 {
-	int 	i;
-	int 	j;
+	int		i;
+	int		j;
 	char	*line;
 
 	i = 0;
@@ -48,7 +48,6 @@ void	what_alloc(t_map *map, int fd)
 	}
 	while (i < map->size_y)
 	{
-
 		map->map[i] = ft_calloc(map->size_x, sizeof(int));
 		if (!map->map[i++])
 		{
@@ -56,12 +55,11 @@ void	what_alloc(t_map *map, int fd)
 			clean_close(map->data);
 		}
 	}
-
 }
 
 void	split_free(char **split)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (split[i])
@@ -71,9 +69,9 @@ void	split_free(char **split)
 
 void	give_values(t_map *map, int fd)
 {
-	int 	x;
-	int 	y;
-	char 	**split_line;
+	int		x;
+	int		y;
+	char	**split_line;
 
 	y = 0;
 	while (y < map->size_y)
@@ -92,7 +90,7 @@ void	give_values(t_map *map, int fd)
 
 t_map	*parsing(char *file, t_map *map)
 {
-	int		fd;
+	int	fd;
 
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
