@@ -73,36 +73,6 @@ int	*projection(int x, int y, int z, t_map *map)
 	return (proj);
 }
 
-int	create_rgb(int r, int g, int b)
-{
-	return (r << 16 | g << 8 | b);
-}
-
-int *color(int z, t_map *map)
-{
-	int	color;
-	int r;
-	int b;
-	int g;
-
-
-	if (!(z - map->range[0]) * (512 / (map->range[1] - map->range[0])) / 256)
-
-
-//	min = -32    z1 = 20   z2 = 123  max = 250;
-//	min = 0      z1 = 52   z2 = 155  max = 282;
-//						max / 2 = blanc
-//                      512 / max = decallage par point
-//
-//       z1 * decallage = couleur
-//		if (!couleur / 256)
-//			couleur % 256 = composante vert et rouge, bleu max
-//		else
-//		256 - couleur % 256 = composante bleu et vert, rouge mAX
-}
-
-// 00FF00 = ROUGE VERT BLEU
-
 void	create_img(t_map *map, t_img *img, t_mlx *mlx)
 {
 	int		x;
