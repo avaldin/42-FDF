@@ -6,7 +6,7 @@
 #    By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 15:30:58 by avaldin           #+#    #+#              #
-#    Updated: 2024/02/16 13:08:14 by avaldin          ###   ########.fr        #
+#    Updated: 2024/02/21 13:55:19 by avaldin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ OBJS		=	$(SOURCES:.c=.o)
 
 
 all			:	$(NAME)
-obj/%.o			:	%.c $(HEADER)
+%.o			:	%.c $(HEADER)
 	$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME)		:	$(OBJS) Makefile
