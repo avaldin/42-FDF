@@ -67,7 +67,7 @@ void	split_free(char **split)
 	free(split);
 }
 
-void	give_values(t_map *map, int fd)
+int	give_values(t_map *map, int fd)
 {
 	int		x;
 	int		y;
@@ -78,6 +78,8 @@ void	give_values(t_map *map, int fd)
 	{
 		x = 0;
 		split_line = ft_split(get_next_line(fd), ' ');
+		if (!split_line)
+			return (0);
 		while (x < map->size_x)
 		{
 			map->map[y][x] = ft_atoi(split_line[x]);
@@ -86,6 +88,7 @@ void	give_values(t_map *map, int fd)
 		split_free(split_line);
 		y++;
 	}
+	return (1);
 }
 
 t_map	*parsing(char *file, t_map *map)
@@ -96,9 +99,15 @@ t_map	*parsing(char *file, t_map *map)
 	if (fd == -1)
 		clean_close(map->data);
 	what_alloc(map, fd);
+	close(fd);
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
 		clean_close(map->data);
-	give_values(map, fd);
+	if (!give_values(map, fd))
+	{
+		close(fd);
+		clean_close(map->data);
+	}
+	close(fd);
 	return (map);
 }
