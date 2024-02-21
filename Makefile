@@ -17,7 +17,7 @@ FLAGS		=	-Wall -Wextra -Werror -g3 -I/usr/include -Imlx_linux -O3
 
 		##		EXECUTABLE			##
 
-NAME		=	FDF
+NAME		=	fdf
 
 		##		PATH				##
 
