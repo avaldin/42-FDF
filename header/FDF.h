@@ -6,7 +6,7 @@
 /*   By: avaldin <avaldin@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:28:50 by avaldin           #+#    #+#             */
-/*   Updated: 2024/02/21 14:03:01 by avaldin          ###   ########.fr       */
+/*   Updated: 2024/02/21 14:15:21 by avaldin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ typedef struct s_data
 	t_mlx	*mlx;
 	t_img	*img;
 	t_map	*map;
-	char 	*file;
+	char	*file;
 }				t_data;
 
 t_data	*init_data(void);
